@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+
+@font-face {
+  font-family: fontAwesome;
+  src: url("./Assets/fa-solid-900.ttf");
+}
+
+// Palette:
+$dark-blue: #8cb6a6;
+$dark-blue-transparent: rgba(0, 109, 119, 0.068);
+$light-blue: #c0dcf4;
+$light: #f9f3ed;
+$light-light-blue: #7ac1ff;
+$dark-light-blue: #4ca9fc;
+$blue: #166ebb;
+$blue-light-version: #2595f7;
+
+// Resets:
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Dancing Script", cursive;
+  padding: 2%;
+  height: 100vh;
+  background-image: url(./Assets/background-picture-1.jpg);
+  background-size: cover;
+  // overflow: hidden;
+}
+
+h1,
+h2 {
+  font-family: "Dancing Script", cursive;
+  color: black;
+  background-color: $light;
+  border: 0.3px solid black;
+}
+
+h1 {
+  font-size: 3.5em;
+  margin: 1% 57% -3% 0%;
+  border-radius: 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.3em;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.ache2-A {
+  margin: 1% 87% 2% 0%;
+}
+
+.ache2-B {
+  margin: 1% 84% 2% 0%;
+}
+
+.ache2-C {
+  margin: 10% 92% 5% 0%;
+}
+
+// Body:
+main {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  margin: 4%;
+  padding: 3% 4%;
+
+  // Icons:
+  button {
+    background-color: $dark-light-blue;
+    border: $dark-light-blue 2px solid;
+    color: $light;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 1%;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $light-light-blue;
+      border: $light-light-blue 2px solid;
+    }
+
+    &.addNewTask::before {
+      font-family: "fontAwesome";
+      content: "\f055";
+    }
+
+    &.edit::before {
+      font-family: "fontAwesome";
+      content: "\f044";
+    }
+
+    &.checked::before {
+      font-family: "fontAwesome";
+      content: "\f058";
+    }
+
+    &.erase::before {
+      font-family: "fontAwesome";
+      content: "\f12d";
+    }
+
+    &.save::before {
+      font-family: "fontAwesome";
+      content: "\f0c7";
+    }
+
+    &.notDone::before {
+      font-family: "fontAwesome";
+      content: "\f057";
+    }
+  }
+
+  input {
+    width: 60%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: $light;
+    border: $dark-blue 2px solid;
+    margin-bottom: 1%;
+  }
+
+  .emptyTaskAlert {
+    font-size: 2em;
+    color: $blue;
+    background-color: $dark-light-blue;
+    border: 2px solid $blue;
+    border-radius: 10px;
+    text-align: center;
+    margin: 1% 63% -3% 0%;
+    padding: 2px 2px;
+  }
+
+  // Hidden class:
+  .hidden {
+    // display: none;
+    visibility: hidden;
+  }
+
+  // Task Creator:
+  .secondSection {
+    margin-top: 5%;
+
+    // Tasks:
+    .allTheTasksContainer {
+      display: flex;
+      width: 100%;
+    }
+    .allTheTasksText {
+      color: grey;
+      cursor: auto;
+
+      &:not(:read-only) {
+        cursor: text;
+        color: $dark-blue;
+        font-weight: 800;
+      }
+
+      &.done {
+        text-decoration: line-through;
+      }
+    }
+    .btnsContainer {
+      width: 30%;
+    }
+  }
+}

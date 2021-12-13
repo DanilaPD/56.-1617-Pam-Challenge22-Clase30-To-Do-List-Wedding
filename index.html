@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+
+    <!-- Nuestro CSS -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Our Wedding's To Do List:</title>
+  </head>
+  <body>
+    <header>
+      <h1>Our Wedding's To Do List:</h1>
+    </header>
+
+    <main class="mainPart">
+      <section class="firstSection">
+        <form id="newTask">
+          <h2 class="ache2-A">New Task:</h2>
+          <input type="text" id="newTaskText" placeholder="Add a new task!" />
+          <button id="newTaskButton" class="addNewTask"></button>
+        </form>
+
+        <div class="emptyTaskAlert hidden" id="emptyTask">
+          You cannot create an empty task!
+        </div>
+      </section>
+
+      <section class="secondSection">
+        <h2 class="ache2-B">Things to do:</h2>
+        <div id="allTheTasks"></div>
+      </section>
+
+      <section class="thirdSection">
+        <h2 class="ache2-C">Done:</h2>
+      </section>
+    </main>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
