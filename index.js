@@ -7,6 +7,8 @@ const emptyTask = document.getElementById("emptyTask");
 
 const allTheTasks = document.getElementById("allTheTasks");
 
+const doneTasks = document.getElementById("doneTasks");
+
 //* Función para cancelar lo que ocurre por default con los botones:
 formNewTask.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -48,13 +50,15 @@ formNewTask.addEventListener("submit", (e) => {
 
   //* Creando los "botones" y agregándoles una "class":
   const editBtn = document.createElement("button");
-  editBtn.classList.add("edit");
+  const editClass = editBtn.classList;
+  editClass.add("edit");
 
   const checkedBtn = document.createElement("button");
-  checkedBtn.classList.add("checked");
+  const checkedClass = checkedBtn.classList;
+  checkedClass.add("checked");
 
   const eraseBtn = document.createElement("button");
-  eraseBtn.classList.add("erase");
+  const eraseClass = eraseBtn.classList.add("erase");
 
   //* Ubicando los elementos a donde corresponde:
   btnsContainer.appendChild(editBtn);
@@ -62,4 +66,31 @@ formNewTask.addEventListener("submit", (e) => {
   btnsContainer.appendChild(eraseBtn);
 
   allTheTasksContainer.appendChild(btnsContainer);
+
+  editBtn.addEventListener("click", () => {
+    editClass.toggle("edit");
+    editClass.toggle("save");
+
+    if (editBtn.contains("save")) {
+      allTheTasksText.removeAttribute("readonly");
+      allTheTasksText.focus();
+    } else {
+      allTheTasksText.setAttribute("readonly", "readonly");
+    }
+  });
+  checkedBtn.addEventListener("click", () => {
+    checkedClass.toggle("checked");
+    checkedClass.toggle("notDone");
+    allTheTasksText.classList.toggle("done");
+
+    if (allTheTasksText.classList.contains("done")) {
+      doneTasks.appendChild(allTheTasksContainer);
+    }
+  });
+  eraseBtn.addEventListener("click", () => {
+    allTheTasks.removeChild(allTheTasksContainer);
+  });
+  eraseBtn.addEventListener("click", () => {
+    doneTasks.removeChild(allTheTasksContainer);
+  });
 });

@@ -133,39 +133,46 @@ main .hidden {
   visibility: hidden;
 }
 
-main .secondSection {
+main .secondSection,
+main .thirdSection {
   margin-top: 5%;
 }
 
-main .secondSection .allTheTasksContainer {
+main .secondSection .allTheTasksContainer,
+main .thirdSection .allTheTasksContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
 }
 
-main .secondSection .allTheTasksText {
+main .secondSection .allTheTasksText,
+main .thirdSection .allTheTasksText {
   color: grey;
   cursor: auto;
 }
 
-main .secondSection .allTheTasksText:not(:-moz-read-only) {
+main .secondSection .allTheTasksText:not(:-moz-read-only),
+main .thirdSection .allTheTasksText:not(:-moz-read-only) {
   cursor: text;
   color: #8cb6a6;
   font-weight: 800;
 }
 
-main .secondSection .allTheTasksText:not(:read-only) {
+main .secondSection .allTheTasksText:not(:read-only),
+main .thirdSection .allTheTasksText:not(:read-only) {
   cursor: text;
   color: #8cb6a6;
   font-weight: 800;
 }
 
-main .secondSection .allTheTasksText.done {
+main .secondSection .allTheTasksText.done,
+main .thirdSection .allTheTasksText.done {
   text-decoration: line-through;
 }
 
-main .secondSection .btnsContainer {
+main .secondSection .btnsContainer,
+main .thirdSection .btnsContainer {
   width: 30%;
 }
 /*# sourceMappingURL=style.css.map */
